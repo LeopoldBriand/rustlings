@@ -10,6 +10,12 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    let numbers: Vec<u64> = (1..=num).collect();
+    if numbers.len() > 1 {
+        numbers.into_iter().reduce(|a, b| a * b).unwrap()
+    } else {
+        1
+    }
 }
 
 fn main() {
